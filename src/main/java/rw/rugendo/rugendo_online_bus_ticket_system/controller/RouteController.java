@@ -31,7 +31,7 @@ public class RouteController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Route>> all() {
+    public ResponseEntity<List<Route>> getAll() {
         return ResponseEntity.ok(service.getAll());
     }
 

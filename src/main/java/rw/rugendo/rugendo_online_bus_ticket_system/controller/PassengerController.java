@@ -31,7 +31,7 @@ public class PassengerController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Passenger>> all() {
+    public ResponseEntity<List<Passenger>> getAll() {
         return ResponseEntity.ok(service.getAll());
     }
 
@@ -45,6 +45,14 @@ public class PassengerController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("The passenger with that id does not exist");
         }
+    }
+
+    //B1
+    @GetMapping("/by-last-name")
+    public ResponseEntity<List<Passenger>> getByLastName(
+        @RequestParam String lastName
+    ) {
+        return ResponseEntity.ok(service.getByLastName(lastName));
     }
 
     @PutMapping("/update/{id}")

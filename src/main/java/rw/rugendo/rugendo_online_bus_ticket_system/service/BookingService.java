@@ -2,8 +2,10 @@ package rw.rugendo.rugendo_online_bus_ticket_system.service;
 
 import org.springframework.stereotype.Service;
 import rw.rugendo.rugendo_online_bus_ticket_system.model.Booking;
+import rw.rugendo.rugendo_online_bus_ticket_system.model.BookingStatus;
 import rw.rugendo.rugendo_online_bus_ticket_system.repository.BookingRepository;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -28,6 +30,16 @@ public class BookingService {
 
     public Optional<Booking> getById(UUID id) {
         return repository.findById(id);
+    }
+
+    //B2
+    public List<Booking> getByStatus(BookingStatus status) {
+        return repository.findByStatusOrderByTravelDateAsc(status);
+    }
+
+    //B3
+    public List<Booking> getBetweenTravelDates(LocalDate start, LocalDate end) {
+        return repository.findByTravelDateBetween(start, end);
     }
 
     public Optional<Booking> update(UUID id, Booking booking) {

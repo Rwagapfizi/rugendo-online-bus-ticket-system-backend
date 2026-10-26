@@ -4,8 +4,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import rw.rugendo.rugendo_online_bus_ticket_system.model.Booking;
+import rw.rugendo.rugendo_online_bus_ticket_system.model.BookingStatus;
 import rw.rugendo.rugendo_online_bus_ticket_system.service.BookingService;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
@@ -31,7 +33,7 @@ public class BookingController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Booking>> all() {
+    public ResponseEntity<List<Booking>> getAll() {
         return ResponseEntity.ok(service.getAll());
     }
 
@@ -45,6 +47,23 @@ public class BookingController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("The booking with that id does not exist");
         }
+    }
+
+    //B2
+    @GetMapping("/by-status")
+    public ResponseEntity<List<Booking>> getByStatus(
+        @RequestParam BookingStatus status
+    ) {
+        return ResponseEntity.ok(service.getByStatus(status));
+    }
+
+    //B3
+    @GetMapping("/between")
+    public ResponseEntity<List<Booking>> getBetweenDates(
+        @RequestParam LocalDate start,
+        @RequestParam LocalDate end
+    ) {
+        return ResponseEntity.ok(service.getBetweenTravelDates(start, end));
     }
 
     @PutMapping("/update/{id}")

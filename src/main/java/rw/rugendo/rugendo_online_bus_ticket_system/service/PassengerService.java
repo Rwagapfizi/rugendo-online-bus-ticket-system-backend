@@ -30,6 +30,11 @@ public class PassengerService {
         return repository.findById(id);
     }
 
+    //B1
+    public List<Passenger> getByLastName(String lastName) {
+        return repository.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
+    }
+
     public Optional<Passenger> update(UUID id, Passenger passenger) {
         return repository.findById(id).map(existing -> {
             passenger.setId(id);

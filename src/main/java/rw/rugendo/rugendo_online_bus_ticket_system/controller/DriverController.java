@@ -31,7 +31,7 @@ public class DriverController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Driver>> all() {
+    public ResponseEntity<List<Driver>> getAll() {
         return ResponseEntity.ok(service.getAll());
     }
 
