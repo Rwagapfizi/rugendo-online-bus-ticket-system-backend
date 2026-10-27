@@ -87,7 +87,22 @@ public class BookingController {
         } else {
             return ResponseEntity.ok(result);
         }
-        // return
+    }
+
+    // F1
+    @GetMapping("/stats/by-status")
+    public List<Object[]> countByStatus() {
+        return service.countByStatus();
+    }
+
+    // F2
+    @PutMapping("/cancel-day")
+    public String cancelBookingsByDoctorID(
+            @RequestParam UUID driverID,
+            @RequestParam String date) {
+
+        LocalDate travelDate = LocalDate.parse(date);
+        return service.cancelBookingsByDriverID(driverID, travelDate);
     }
 
     @PutMapping("/update/{id}")

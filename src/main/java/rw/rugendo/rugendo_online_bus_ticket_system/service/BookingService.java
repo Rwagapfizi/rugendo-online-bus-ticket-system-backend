@@ -93,6 +93,22 @@ public class BookingService {
         return repository.findByTravelDateBetween(start, end);
     }
 
+    // F1
+    public List<Object[]> countByStatus() {
+        return repository.countPerStatus();
+    }
+
+    // F2
+    public String cancelBookingsByDriverID(UUID driverID, LocalDate travelDate) {
+        int cancelledBookings = repository.cancelBookingsByDriverID(
+                driverID,
+                travelDate,
+                BookingStatus.CANCELLED,
+                BookingStatus.PAID);
+
+        return cancelledBookings + " bookings cancelled";
+    }
+
     public Optional<Booking> update(UUID id, Booking booking) {
         return repository.findById(id).map(existing -> {
             booking.setId(id);
