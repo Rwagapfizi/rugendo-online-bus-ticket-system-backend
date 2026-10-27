@@ -8,11 +8,14 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
-public interface BookingRepository extends JpaRepository<Booking, UUID>{
-    
-    //B2
+public interface BookingRepository extends JpaRepository<Booking, UUID> {
+
+    // B2
     List<Booking> findByStatusOrderByTravelDateAsc(BookingStatus status);
 
-    //B3
+    // B3
     List<Booking> findByTravelDateBetween(LocalDate start, LocalDate end);
-} 
+
+    // D1
+    boolean existsByDriverIdAndTravelDateAndStatusNot(UUID driverID, LocalDate travelDate, BookingStatus status);
+}

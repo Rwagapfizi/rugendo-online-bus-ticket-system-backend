@@ -47,12 +47,46 @@ public class DriverController {
         }
     }
 
-    //C1
+    // C1
     @GetMapping("/by-route")
     public ResponseEntity<List<Driver>> getByRoute(
-        @RequestParam String name
-    ) {
+            @RequestParam String name) {
         return ResponseEntity.ok(service.getByRoute(name));
+    }
+
+    // D3
+    @PutMapping("/{driverID}/routes")
+    public ResponseEntity<String> addRoute(
+            @PathVariable UUID driverID,
+            @RequestParam UUID routeID) {
+        String result = service.addRoute(driverID, routeID);
+
+        if (result.equals("The driver with that id does not exist")
+                || result.equals("That route does not exist")) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(result);
+        } else if (result.equals("The driver already has that route")) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(result);
+        } else {
+            return ResponseEntity.ok(result);
+        }
+    }
+
+    // D4
+    @PatchMapping("/{driverID}/bus")
+    public ResponseEntity<String> moveBus(
+            @PathVariable UUID driverID,
+            @RequestParam int busNumber) {
+        String result = service.moveBus(driverID, busNumber);
+
+        if (result.equals("The driver with that id does not exist")
+                || result.equals("The bus with that busNumber does not exist")) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(result);
+        } else if (result.equals("That bus is taken by another driver")
+                || result.equals("The driver already has this bus")) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(result);
+        } else {
+            return ResponseEntity.ok(result);
+        }
     }
 
     @PutMapping("/update/{id}")

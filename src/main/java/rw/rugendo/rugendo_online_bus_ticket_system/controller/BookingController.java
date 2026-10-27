@@ -21,14 +21,19 @@ public class BookingController {
         this.service = service;
     }
 
+    // D1
     @PostMapping("/save")
     public ResponseEntity<String> save(@RequestBody Booking booking) {
         String message = service.save(booking);
 
-        if (message.equals("Booking saved successfully")) {
+        if (message.equals("Booking date cannot be in the past")) {
+            return ResponseEntity.badRequest().body(message);
+        } else if (message.equals("Driver already has a trip on that date")) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
+        } else if (message.equals("Booking saved successfully")) {
             return ResponseEntity.status(HttpStatus.CREATED).body(message);
         } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
+            return ResponseEntity.badRequest().body(message);
         }
     }
 
@@ -66,6 +71,23 @@ public class BookingController {
         LocalDate endDate = LocalDate.parse(end);
 
         return ResponseEntity.ok(service.getBetweenTravelDates(startDate, endDate));
+    }
+
+    // D2
+    @PatchMapping("/{id}/status")
+    public ResponseEntity<String> changeStatus(
+            @PathVariable UUID id,
+            @RequestParam BookingStatus status) {
+        String result = service.updateStatus(id, status);
+
+        if (result.equals("The booking with that id does not exist")) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(result);
+        } else if (result.startsWith("Cannot change status from ")) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result);
+        } else {
+            return ResponseEntity.ok(result);
+        }
+        // return
     }
 
     @PutMapping("/update/{id}")
