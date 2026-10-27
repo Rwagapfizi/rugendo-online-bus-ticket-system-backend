@@ -30,6 +30,11 @@ public class BusService {
         return repository.findById(id);
     }
 
+    //C2
+    public List<Bus> getFreeBuses() {
+        return repository.findFreeBuses();
+    }
+
     public Optional<Bus> update(UUID id, Bus bus) {
         return repository.findById(id).map(existing -> {
             bus.setId(id);

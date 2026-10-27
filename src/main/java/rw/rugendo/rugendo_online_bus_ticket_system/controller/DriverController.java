@@ -47,6 +47,14 @@ public class DriverController {
         }
     }
 
+    //C1
+    @GetMapping("/by-route")
+    public ResponseEntity<List<Driver>> getByRoute(
+        @RequestParam String name
+    ) {
+        return ResponseEntity.ok(service.getByRoute(name));
+    }
+
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(
             @PathVariable UUID id,

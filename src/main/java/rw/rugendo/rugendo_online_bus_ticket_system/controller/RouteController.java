@@ -47,6 +47,12 @@ public class RouteController {
         }
     }
 
+    //C3
+    @GetMapping("/unused")
+    public ResponseEntity<List<Route>> getUnusedRoutes() {
+        return ResponseEntity.ok(service.getUnusedRoutes());
+    }
+
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(
             @PathVariable UUID id,

@@ -1,7 +1,12 @@
 package rw.rugendo.rugendo_online_bus_ticket_system.model;
 
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "passenger")
@@ -18,6 +23,10 @@ public class Passenger {
     private String nationalId;
 
     private String phone;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "passenger")
+    private List<Booking> bookings = new ArrayList<>();
 
     public Passenger() {
     }
@@ -61,4 +70,12 @@ public class Passenger {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }    
 }

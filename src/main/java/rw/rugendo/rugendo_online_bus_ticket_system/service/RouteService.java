@@ -30,6 +30,11 @@ public class RouteService {
         return repository.findById(id);
     }
 
+    //C3
+    public List<Route> getUnusedRoutes() {
+        return repository.findUnusedRoutes();
+    }
+
     public Optional<Route> update(UUID id, Route route) {
         return repository.findById(id).map(existing -> {
             route.setId(id);

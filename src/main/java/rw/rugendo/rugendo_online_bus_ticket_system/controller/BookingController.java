@@ -49,21 +49,23 @@ public class BookingController {
         }
     }
 
-    //B2
+    // B2
     @GetMapping("/by-status")
     public ResponseEntity<List<Booking>> getByStatus(
-        @RequestParam BookingStatus status
-    ) {
+            @RequestParam BookingStatus status) {
         return ResponseEntity.ok(service.getByStatus(status));
     }
 
-    //B3
+    // B3
     @GetMapping("/between")
     public ResponseEntity<List<Booking>> getBetweenDates(
-        @RequestParam LocalDate start,
-        @RequestParam LocalDate end
-    ) {
-        return ResponseEntity.ok(service.getBetweenTravelDates(start, end));
+            @RequestParam String start,
+            @RequestParam String end) {
+
+        LocalDate startDate = LocalDate.parse(start);
+        LocalDate endDate = LocalDate.parse(end);
+
+        return ResponseEntity.ok(service.getBetweenTravelDates(startDate, endDate));
     }
 
     @PutMapping("/update/{id}")

@@ -2,6 +2,7 @@ package rw.rugendo.rugendo_online_bus_ticket_system.service;
 
 import org.springframework.stereotype.Service;
 import rw.rugendo.rugendo_online_bus_ticket_system.model.Passenger;
+import rw.rugendo.rugendo_online_bus_ticket_system.repository.DriverRepository;
 import rw.rugendo.rugendo_online_bus_ticket_system.repository.PassengerRepository;
 
 import java.util.List;
@@ -12,9 +13,13 @@ import java.util.UUID;
 public class PassengerService {
 
     private final PassengerRepository repository;
+    private final DriverRepository driverRepository;
 
-    public PassengerService(PassengerRepository repository) {
+    public PassengerService(
+            PassengerRepository repository,
+            DriverRepository driverRepository) {
         this.repository = repository;
+        this.driverRepository = driverRepository;
     }
 
     public String save(Passenger passenger) {
@@ -30,9 +35,17 @@ public class PassengerService {
         return repository.findById(id);
     }
 
-    //B1
+    // B1
     public List<Passenger> getByLastName(String lastName) {
         return repository.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
+    }
+
+    // C4
+    public Optional<List<Passenger>> getByDriverID(UUID driverID) {
+        if (!driverRepository.existsById(driverID)) {
+            return Optional.empty();
+        }
+        return Optional.of(repository.findByDriverID(driverID));
     }
 
     public Optional<Passenger> update(UUID id, Passenger passenger) {

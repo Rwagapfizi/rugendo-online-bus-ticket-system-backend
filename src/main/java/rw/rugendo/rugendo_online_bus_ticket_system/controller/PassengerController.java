@@ -3,10 +3,12 @@ package rw.rugendo.rugendo_online_bus_ticket_system.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import rw.rugendo.rugendo_online_bus_ticket_system.model.Passenger;
 import rw.rugendo.rugendo_online_bus_ticket_system.service.PassengerService;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
@@ -47,12 +49,25 @@ public class PassengerController {
         }
     }
 
-    //B1
+    // B1
     @GetMapping("/by-last-name")
     public ResponseEntity<List<Passenger>> getByLastName(
-        @RequestParam String lastName
-    ) {
+            @RequestParam String lastName) {
         return ResponseEntity.ok(service.getByLastName(lastName));
+    }
+
+    // C4
+    @GetMapping("/of-driver")
+    public ResponseEntity<?> getByDriverID(@RequestParam UUID driverID) {
+        Optional<List<Passenger>> result = service.getByDriverID(driverID);
+        
+        if (result.isEmpty()) {
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body("The driver with that id does not exist");
+        }
+
+        return ResponseEntity.ok(result.get());
     }
 
     @PutMapping("/update/{id}")

@@ -47,6 +47,11 @@ public class BusController {
         }
     }
 
+    @GetMapping("/free")
+    public ResponseEntity<List<Bus>> getFreeBUses() {
+        return ResponseEntity.ok(service.getFreeBuses());
+    }
+
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(
             @PathVariable UUID id,

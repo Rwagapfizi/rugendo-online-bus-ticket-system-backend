@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "driver")
 public class Driver {
@@ -28,6 +30,10 @@ public class Driver {
         inverseJoinColumns = @JoinColumn(name = "route_id")
     )
     private List<Route> routes = new ArrayList<>();
+
+    @JsonIgnore 
+    @OneToMany(mappedBy = "driver")
+    private List<Booking> bookings = new ArrayList<>();
 
     public Driver() {
     }
@@ -78,5 +84,13 @@ public class Driver {
 
     public void setRoutes(List<Route> routes) {
         this.routes = routes;
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
     }
 }

@@ -30,6 +30,11 @@ public class DriverService {
         return repository.findById(id);
     }
 
+    //C1
+    public List<Driver> getByRoute(String route) {
+        return repository.findByRoute(route);
+    }
+
     public Optional<Driver> update(UUID id, Driver driver) {
         return repository.findById(id).map(existing -> {
             driver.setId(id);
