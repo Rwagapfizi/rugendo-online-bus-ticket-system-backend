@@ -111,6 +111,8 @@ public class BookingController {
 
         if (message.equals("Booking deleted successfully")) {
             return ResponseEntity.ok(message);
+        } else if (message.equals("That booking has tickets, delete them first")) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
         }

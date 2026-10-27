@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import rw.rugendo.rugendo_online_bus_ticket_system.model.Booking;
 import rw.rugendo.rugendo_online_bus_ticket_system.model.BookingStatus;
 import rw.rugendo.rugendo_online_bus_ticket_system.repository.BookingRepository;
+import rw.rugendo.rugendo_online_bus_ticket_system.repository.TicketRepository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -14,9 +15,11 @@ import java.util.UUID;
 public class BookingService {
 
     private final BookingRepository repository;
+    private final TicketRepository ticketRepository;
 
-    public BookingService(BookingRepository repository) {
+    public BookingService(BookingRepository repository, TicketRepository ticketRepository) {
         this.repository = repository;
+        this.ticketRepository = ticketRepository;
     }
 
     // D1
@@ -106,6 +109,10 @@ public class BookingService {
 
     public String delete(UUID id) {
         if (repository.existsById(id)) {
+            if (ticketRepository.existsByBookingId(id)) {
+                return "That booking has tickets, delete them first";
+            }
+
             repository.deleteById(id);
             return "Booking deleted successfully";
         }
