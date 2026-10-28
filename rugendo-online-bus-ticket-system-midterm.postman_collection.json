@@ -1,0 +1,1159 @@
+{
+  "info": {
+    "_postman_id": "1a7dff9b-b952-4bdf-9a0f-07687656fb82",
+    "name": "RUGENDO",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24809325",
+    "_collection_link": "https://go.postman.co/collection/24809325-1a7dff9b-b952-4bdf-9a0f-07687656fb82?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "A2 (CRUD)",
+      "item": [
+        {
+          "name": "Routes",
+          "item": [
+            {
+              "name": "Save Route",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Kigali to Nyagatare\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/api/routes/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "routes",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get All Routes",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/routes/all",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "routes",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get by ID",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/routes/bef0cd7b-658d-40c1-93be-4c2dba31051d",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "routes",
+                    "bef0cd7b-658d-40c1-93be-4c2dba31051d"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Route",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Kigali to Huye\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/api/routes/update/bef0cd7b-658d-40c1-93be-4c2dba31051d",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "routes",
+                    "update",
+                    "bef0cd7b-658d-40c1-93be-4c2dba31051d"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Route",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/routes/delete/50b100b3-ed93-4a14-ad81-56495b706feb",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "routes",
+                    "delete",
+                    "50b100b3-ed93-4a14-ad81-56495b706feb"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Buses",
+          "item": [
+            {
+              "name": "Save Bus",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"busNumber\": 104,\r\n  \"name\": \"Bus 4\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/api/buses/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "buses",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get All Buses",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/buses/all",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "buses",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get by ID",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/buses/68903bd2-a83d-44cc-b4ee-5ec02e2523fa",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "buses",
+                    "68903bd2-a83d-44cc-b4ee-5ec02e2523fa"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Bus",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"busNumber\": 101,\r\n    \"name\": \"Bus 1\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/api/buses/update/68903bd2-a83d-44cc-b4ee-5ec02e2523fa",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "buses",
+                    "update",
+                    "68903bd2-a83d-44cc-b4ee-5ec02e2523fa"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Bus",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/buses/delete/50b100b3-ed93-4a14-ad81-56495b706feb",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "buses",
+                    "delete",
+                    "50b100b3-ed93-4a14-ad81-56495b706feb"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Drivers",
+          "item": [
+            {
+              "name": "Save Drivers",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"firstName\": \"Jane\",\r\n  \"lastName\": \"Juliet\",\r\n  \"licenseNumber\": \"Driver3\",\r\n  \"bus\": {\r\n    \"id\": \"f74633dd-948f-4be0-952d-2f84a77f34ac\"\r\n  },\r\n  \"routes\": [\r\n    {\r\n      \"id\": \"bef0cd7b-658d-40c1-93be-4c2dba31051d\"\r\n    }\r\n  ]\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/api/drivers/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "drivers",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get All Drivers",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/drivers/all",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "drivers",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get by ID",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/drivers/3dfcf8bd-8d24-4e86-8db2-0800acc851b9",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "drivers",
+                    "3dfcf8bd-8d24-4e86-8db2-0800acc851b9"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Driver",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"bus\": {\r\n        \"id\": \"68903bd2-a83d-44cc-b4ee-5ec02e2523fa\"\r\n    },\r\n    \"firstName\": \"Igor\",\r\n    \"lastName\": \"Roggy\",\r\n    \"licenseNumber\": \"Driver1\",\r\n    \"routes\": [\r\n        {\r\n            \"id\": \"69406082-cdd6-463c-a209-6bae2542d62a\"\r\n        },\r\n        {\r\n            \"id\": \"bef0cd7b-658d-40c1-93be-4c2dba31051d\"\r\n        }\r\n    ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/api/drivers/update/3dfcf8bd-8d24-4e86-8db2-0800acc851b9",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "drivers",
+                    "update",
+                    "3dfcf8bd-8d24-4e86-8db2-0800acc851b9"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Driver",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/drivers/delete/50b100b3-ed93-4a14-ad81-56495b706feb",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "drivers",
+                    "delete",
+                    "50b100b3-ed93-4a14-ad81-56495b706feb"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Passengers",
+          "item": [
+            {
+              "name": "Save Passenger",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\r\n{\r\n  \"firstName\": \"Grace\",\r\n  \"lastName\": \"Ingabire\",\r\n  \"nationalId\": \"1199880012345682\",\r\n  \"phone\": \"0788000005\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/api/passengers/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "passengers",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get All Passengers",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/passengers/all",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "passengers",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get by ID",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/passengers/46da19b1-41db-42d2-9ac5-9c352696733c",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "passengers",
+                    "46da19b1-41db-42d2-9ac5-9c352696733c"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Passenger",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"firstName\": \"Igor\",\r\n  \"lastName\": \"Rwagapfizi\",\r\n  \"nationalId\": \"1199880012345681\",\r\n  \"phone\": \"0791826733\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/api/passengers/update/46da19b1-41db-42d2-9ac5-9c352696733c",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "passengers",
+                    "update",
+                    "46da19b1-41db-42d2-9ac5-9c352696733c"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Passenger",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/passenger/delete/50b100b3-ed93-4a14-ad81-56495b706feb",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "passenger",
+                    "delete",
+                    "50b100b3-ed93-4a14-ad81-56495b706feb"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Bookings",
+          "item": [
+            {
+              "name": "Save Booking",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"travelDate\": \"2026-11-25\",\r\n    \"status\": \"RESERVED\",\r\n    \"destination\": \"Kigali to Huye\",\r\n    \"seatNumber\": 10,\r\n    \"passenger\": {\r\n        \"id\": \"cdc02089-796a-4af3-b4b4-29c7eac79a3a\"\r\n    },\r\n    \"driver\": {\r\n        \"id\": \"e916c1f0-27ac-4484-95a8-88fdd8719d9c\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/api/bookings/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "bookings",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get All Bookings",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/bookings/all",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "bookings",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get by ID",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/bookings/68903bd2-a83d-44cc-b4ee-5ec02e2523fa",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "bookings",
+                    "68903bd2-a83d-44cc-b4ee-5ec02e2523fa"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Booking",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"busNumber\": 101,\r\n    \"name\": \"Bus 1\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8080/api/bookings/update/68903bd2-a83d-44cc-b4ee-5ec02e2523fa",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "bookings",
+                    "update",
+                    "68903bd2-a83d-44cc-b4ee-5ec02e2523fa"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Booking",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8080/api/bookings/delete/00a759e2-d574-4f2c-bafc-86f6f26fe476",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "bookings",
+                    "delete",
+                    "00a759e2-d574-4f2c-bafc-86f6f26fe476"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Get All Tickets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/api/tickets/all",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tickets",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "B1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/passengers/by-last-name?lastName=mukamana",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "passengers",
+            "by-last-name"
+          ],
+          "query": [
+            {
+              "key": "lastName",
+              "value": "mukamana"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/bookings/by-status?status=REQUESTED",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings",
+            "by-status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "REQUESTED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B3",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/bookings/between?start=2026-10-01&end=2026-10-31",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings",
+            "between"
+          ],
+          "query": [
+            {
+              "key": "start",
+              "value": "2026-10-01"
+            },
+            {
+              "key": "end",
+              "value": "2026-10-31"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/drivers/by-route?name=musanze",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "drivers",
+            "by-route"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "musanze"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/buses/free",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "buses",
+            "free"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C3",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/routes/unused",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "routes",
+            "unused"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C4",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/passengers/of-driver?driverID=3dfcf8bd-8d24-4e86-8db2-0800acc851b9",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "passengers",
+            "of-driver"
+          ],
+          "query": [
+            {
+              "key": "driverID",
+              "value": "3dfcf8bd-8d24-4e86-8db2-0800acc851b9"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"travelDate\": \"2026-11-25\",\r\n    \"status\": \"RESERVED\",\r\n    \"destination\": \"Kigali to Huye\",\r\n    \"seatNumber\": 10,\r\n    \"passenger\": {\r\n        \"id\": \"cdc02089-796a-4af3-b4b4-29c7eac79a3a\"\r\n    },\r\n    \"driver\": {\r\n        \"id\": \"e916c1f0-27ac-4484-95a8-88fdd8719d9c\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/api/bookings/save",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D2",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"travelDate\": \"2026-11-25\",\r\n    \"status\": \"RESERVED\",\r\n    \"destination\": \"Kigali to Huye\",\r\n    \"seatNumber\": 10,\r\n    \"passenger\": {\r\n        \"id\": \"cdc02089-796a-4af3-b4b4-29c7eac79a3a\"\r\n    },\r\n    \"driver\": {\r\n        \"id\": \"e916c1f0-27ac-4484-95a8-88fdd8719d9c\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/api/bookings/b7ef62f4-bd13-4e94-aba3-f78188aa4116/status?status=PAID",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings",
+            "b7ef62f4-bd13-4e94-aba3-f78188aa4116",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "PAID"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D3",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"travelDate\": \"2026-11-25\",\r\n    \"status\": \"RESERVED\",\r\n    \"destination\": \"Kigali to Huye\",\r\n    \"seatNumber\": 10,\r\n    \"passenger\": {\r\n        \"id\": \"cdc02089-796a-4af3-b4b4-29c7eac79a3a\"\r\n    },\r\n    \"driver\": {\r\n        \"id\": \"e916c1f0-27ac-4484-95a8-88fdd8719d9c\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/api/drivers/7bd64a14-07a9-4f3a-8bc1-ed2412e7d60e/routes?routeID=69406082-cdd6-463c-a209-6bae2542d62a",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "drivers",
+            "7bd64a14-07a9-4f3a-8bc1-ed2412e7d60e",
+            "routes"
+          ],
+          "query": [
+            {
+              "key": "routeID",
+              "value": "69406082-cdd6-463c-a209-6bae2542d62a"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "D4",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"travelDate\": \"2026-11-25\",\r\n    \"status\": \"RESERVED\",\r\n    \"destination\": \"Kigali to Huye\",\r\n    \"seatNumber\": 10,\r\n    \"passenger\": {\r\n        \"id\": \"cdc02089-796a-4af3-b4b4-29c7eac79a3a\"\r\n    },\r\n    \"driver\": {\r\n        \"id\": \"e916c1f0-27ac-4484-95a8-88fdd8719d9c\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/api/drivers/7bd64a14-07a9-4f3a-8bc1-ed2412e7d60e/bus?busNumber=102",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "drivers",
+            "7bd64a14-07a9-4f3a-8bc1-ed2412e7d60e",
+            "bus"
+          ],
+          "query": [
+            {
+              "key": "busNumber",
+              "value": "102"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"ticketType\": \"Adult\",\r\n    \"remarks\": \"Window seat requested\",\r\n    \"fare\": 4500\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/api/tickets/save?bookingID=00a759e2-d574-4f2c-bafc-86f6f26fe476",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tickets",
+            "save"
+          ],
+          "query": [
+            {
+              "key": "bookingID",
+              "value": "00a759e2-d574-4f2c-bafc-86f6f26fe476"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/tickets/passenger?nationalID=1199880012345679",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tickets",
+            "passenger"
+          ],
+          "query": [
+            {
+              "key": "nationalID",
+              "value": "1199880012345679"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "E3",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/tickets/delete/c9b42739-61e3-4417-ba60-5438e16167cc",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tickets",
+            "delete",
+            "c9b42739-61e3-4417-ba60-5438e16167cc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "F1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/bookings/stats/by-status",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings",
+            "stats",
+            "by-status"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "F2",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/bookings/cancel-day?date=2026-10-05&driverID=3dfcf8bd-8d24-4e86-8db2-0800acc851b9",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings",
+            "cancel-day"
+          ],
+          "query": [
+            {
+              "key": "date",
+              "value": "2026-10-05"
+            },
+            {
+              "key": "driverID",
+              "value": "3dfcf8bd-8d24-4e86-8db2-0800acc851b9"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bonus 1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/dashboard/summary",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "dashboard",
+            "summary"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bonus 2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/bookings/page?page=0&size=5&sort=travelDate,Asc",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings",
+            "page"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "5"
+            },
+            {
+              "key": "sort",
+              "value": "travelDate,Asc"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

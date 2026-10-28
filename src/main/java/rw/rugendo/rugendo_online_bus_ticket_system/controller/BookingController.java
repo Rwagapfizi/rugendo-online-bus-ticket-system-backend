@@ -1,5 +1,9 @@
 package rw.rugendo.rugendo_online_bus_ticket_system.controller;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -103,6 +107,27 @@ public class BookingController {
 
         LocalDate travelDate = LocalDate.parse(date);
         return service.cancelBookingsByDriverID(driverID, travelDate);
+    }
+
+    // Bonus 2
+    @GetMapping("/page")
+    public Page<Booking> getBookingsPaged(
+            @RequestParam int page,
+            @RequestParam int size,
+            @RequestParam String sort) {
+
+        String[] sortParts = sort.split(",");
+
+        String property = sortParts[0];
+        Sort.Direction direction = Sort.Direction.fromString(
+                sortParts.length > 1 ? sortParts[1] : "asc");
+
+        Pageable pageable = PageRequest.of(
+                page,
+                size,
+                Sort.by(direction, property));
+
+        return service.getBookingsPaged(pageable);
     }
 
     @PutMapping("/update/{id}")

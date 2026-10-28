@@ -1,5 +1,7 @@
 package rw.rugendo.rugendo_online_bus_ticket_system.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import rw.rugendo.rugendo_online_bus_ticket_system.model.Booking;
 import rw.rugendo.rugendo_online_bus_ticket_system.model.BookingStatus;
@@ -107,6 +109,11 @@ public class BookingService {
                 BookingStatus.PAID);
 
         return cancelledBookings + " bookings cancelled";
+    }
+
+    // Bonus 2
+    public Page<Booking> getBookingsPaged(Pageable pageable){
+        return repository.findAll(pageable);
     }
 
     public Optional<Booking> update(UUID id, Booking booking) {

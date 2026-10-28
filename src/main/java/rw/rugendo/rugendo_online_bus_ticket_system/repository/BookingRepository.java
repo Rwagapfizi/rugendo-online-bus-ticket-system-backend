@@ -46,4 +46,8 @@ public interface BookingRepository extends JpaRepository<Booking, UUID> {
             @Param("date") LocalDate date,
             @Param("cancelled") BookingStatus cancelledStatus,
             @Param("paid") BookingStatus paidStatus);
+
+    // Bonus 1
+    int countByStatus(BookingStatus status);
+    int countByTravelDate(LocalDate travelDate);
 }
